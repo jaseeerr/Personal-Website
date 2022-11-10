@@ -19,7 +19,7 @@
 
 
   <!-- Favicons -->
-  <link rel="icon" href="/Personal/assets/img/icon.png">
+  <link rel="icon" href="assets/img/icon.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -796,17 +796,30 @@
       <form  id="form-sub"  class="php-email-form-1 mt-4" >
         <div class="row">
           <div class="col-md-6 form-group">
-            <input type="text" name="name"  class="form-control" id="name" placeholder="Your Name" required>
+            <!-- <input type="text" name="name"  class="form-control" id="name" onblur="namecheck()" placeholder="Your Name" required> -->
+            <input id="name" type="text" name="name" class="form-control" placeholder="Name" required onblur="namecheck()">
+            <label id="nmlabel" for="name" style="display: none; color:red;">This field is requierd</label>
+            <label id="nmlabel-01" for="name" style="display: none; color:red;">Name does't start with number</label>
+            <label id="nmlabel-02" for="name" style="display: none; color:red;">Name does't containe special charecters</label>
           </div>
           <div class="col-md-6 form-group mt-3 mt-md-0">
-            <input type="email"  class="form-control" name="email" id="email" placeholder="Your Email" required>
+            <!-- <input type="email"  class="form-control" name="email" id="email" placeholder="Your Email" required> -->
+            <input id="email" type="email" name="email" class="form-control" placeholder="Email Address" required onblur="emailcheck()">
+                      <label id="el" for="name" style="display: none; color:red;">This field is requierd</label>
+                      <label id="el-01" for="name" style="display: none; color:red;">Email does't start with number</label>
+                      <label id="el-02" for="name" style="display: none; color:red;">Email is invalid</label>
           </div>
         </div>
         <div class="form-group mt-3">
-          <input type="text" class="form-control"  name="subject" id="subject" placeholder="Subject" required>
+          <input type="text" class="form-control"  name="subject" id="subject" placeholder="Subject" required onblur="checksubject()">
+          <label id="es" for="subject" style="display: none; color:red;">This field is requierd</label>
+            
         </div>
         <div class="form-group mt-3">
-          <textarea class="form-control"  name="message" rows="5" placeholder="Message" required></textarea>
+          <!-- <textarea class="form-control"  name="message" rows="5" placeholder="Message" required></textarea> -->
+          <textarea id="msg" name="message" class="form-control" rows="4" placeholder="Enter your message" required onblur="msgcheck()"> </textarea>
+                  <label id="ml" for="name" style="display: none; color:red;">This field is requierd</label>
+                  <label id="ml-01" for="name" style="display: none; color:red;">Minimum 50 letters</label>
         </div>
         <div class="my-3">
           <div class="loading">Loading</div>
@@ -853,7 +866,7 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
-<script src="/Personal/script.js"></script>
+
 </body>
 
 </html>
